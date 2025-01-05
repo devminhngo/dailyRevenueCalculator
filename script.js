@@ -156,3 +156,31 @@ function resetForm() {
   document.getElementById("employees").value = "";
 }
 
+//Enter key to move focus to the next input field in the form
+
+document.getElementById("dynamicForm").addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault(); // Prevent default behavior
+    const form = event.target.form;
+    const index = Array.prototype.indexOf.call(form, event.target);
+    if (form.elements[index + 1]) {
+      form.elements[index + 1].focus(); // Focus the next field
+    }
+  }
+});
+
+// Display the current date on the page
+document.addEventListener("DOMContentLoaded", function () {
+  const currentDateElement = document.getElementById("currentDate");
+  const today = new Date();
+
+  // Format the date as needed (e.g., "January 4, 2025")
+  const options = { year: "numeric", month: "long", day: "numeric" };
+  currentDateElement.textContent = today.toLocaleDateString(undefined, options);
+});
+
+
+
+
+
+

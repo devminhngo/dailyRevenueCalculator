@@ -3,11 +3,12 @@
   <head>
     <title>Park Meadows Daily Revenue</title>
     <style>
-      <?!= include('style'); ?>
+      <?!= include('style'); ?> 
     </style>
   </head>
   <body>
     <h2>Park Meadows Daily Revenue</h2>
+    <h2 id="currentDate"></h2>
 
     <form id="dynamicForm" onsubmit="submitForm(event)">
       <label for="$100">$100:</label>
@@ -43,13 +44,21 @@
       <input type="text" id="totalCash" readonly /><br />
 
       <label for="cashTips">Cash Tips</label>
-      <input type="number" id="cashTips" oninput="calculateTotal()" /><br />
+      <input
+        type="number"
+        id="cashTips"
+        oninput="calculateTotal()"
+        step="0.01"
+        min="0"
+      /><br />
 
       <label for="creditcardTips">Credit Card Tips</label>
       <input
         type="number"
         id="creditCardTips"
         oninput="calculateTotal()"
+        step="0.01"
+        min="0"
       /><br />
 
       <label for="totalTips">Total Tips</label>
@@ -60,6 +69,8 @@
         type="number"
         id="hoursWorked"
         oninput="calculateTotal()"
+        step="0.01"
+        min="0"
         required
       /><br />
 
@@ -68,6 +79,7 @@
 
       <label for="employees">Employees</label>
       <input type="text" id="employees" required /><br /><br />
+
       <button type="submit">Submit</button>
     </form>
     <!-- Alert Modal -->
@@ -77,8 +89,8 @@
         <p id="alertMessage"></p>
       </div>
     </div>
-        <script>
-      // <?!= include('script'); ?>
+    <script>
+      <?!= include('script'); ?>
     </script>
   </body>
 </html>
