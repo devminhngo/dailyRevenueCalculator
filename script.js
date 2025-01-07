@@ -20,16 +20,25 @@ async function submitForm(event) {
   const totalHours = document.getElementById("totalHours").value;
   const tipsPerHours = document.getElementById("tipsPerHours").value;
   const employee1 = document.getElementById("employee1").value;
-  // const employee2 = document.getElementById("employee2").value;
-  // const employee3 = document.getElementById("employee3").value;
-  // const employee4 = document.getElementById("employee4").value;
-  // const employee5 = document.getElementById("employee5").value;
-  // const employee6 = document.getElementById("employee6").value;
-  // const employee7 = document.getElementById("employee7").value;
-  // const employee8 = document.getElementById("employee8").value;
-  // const employee9 = document.getElementById("employee9").value;
-  // const employee10 = document.getElementById("employee10").value;
 
+  const employee2Element = document.getElementById("employee2");
+  const employee2 = employee2Element ? employee2Element.value : "";
+  const employee3Element = document.getElementById("employee3");
+  const employee3 = employee3Element ? employee3Element.value : "";
+  const employee4Element = document.getElementById("employee4"); 
+  const employee4 = employee4Element ? employee4Element.value : "";
+  const employee5Element = document.getElementById("employee5");
+  const employee5 = employee5Element ? employee5Element.value : "";
+  const employee6Element = document.getElementById("employee6");
+  const employee6 = employee6Element ? employee6Element.value : "";
+  const employee7Element = document.getElementById("employee7");
+  const employee7 = employee7Element ? employee7Element.value : "";
+  const employee8Element = document.getElementById("employee8");
+  const employee8 = employee8Element ? employee8Element.value : "";
+  const employee9Element = document.getElementById("employee9");
+  const employee9 = employee9Element ? employee9Element.value : "";
+  const employee10Element = document.getElementById("employee10");
+  const employee10 = employee10Element ? employee10Element.value : "";
 
   // Google Form URL and Entry IDs
   const formURL =
@@ -37,7 +46,7 @@ async function submitForm(event) {
   const formData = new FormData();
   formData.append("entry.620449416", dollar100); // 1
   formData.append("entry.1257815732", dollar50); //2
-  formData.append("entry.1364637093", dollar20);//3
+  formData.append("entry.1364637093", dollar20); //3
   formData.append("entry.430719215", dollar10); //4
   formData.append("entry.301685711", dollar5); //5
   formData.append("entry.1092902415", dollar2); //6
@@ -53,15 +62,15 @@ async function submitForm(event) {
   formData.append("entry.1394990260", totalHours); //16
   formData.append("entry.4514394", tipsPerHours); //17
   formData.append("entry.327614031", employee1); //18
-  //formData.append("entry.985937245", employee2); //19
-  // formData.append("entry.32268275", employee3); //20
-  // formData.append("entry.677445114", employee4); //21
-  // formData.append("entry.186781676", employee5); //22
-  // formData.append("entry.90846170", employee6); //23
-  // formData.append("entry.939478897", employee7); //24
-  // formData.append("entry.1967954126", employee8); //25
-  // formData.append("entry.326229070", employee9); //26
-  // formData.append("entry.642011690", employee10); //27
+  formData.append("entry.985937245", employee2); //19
+  formData.append("entry.32268275", employee3); //20
+  formData.append("entry.677445114", employee4); //21
+  formData.append("entry.186781676", employee5); //22
+  formData.append("entry.90846170", employee6); //23
+  formData.append("entry.939478897", employee7); //24
+  formData.append("entry.1967954126", employee8); //25
+  formData.append("entry.326229070", employee9); //26
+  formData.append("entry.642011690", employee10); //27
 
   try {
     // Submit form data
@@ -91,6 +100,15 @@ async function submitForm(event) {
       totalHours,
       tipsPerHours,
       employee1,
+      employee2,
+      employee3,
+      employee4,
+      employee5,
+      employee6,
+      employee7,
+      employee8,
+      employee9,
+      employee10,
     });
 
     showAlert("Form submitted successfully, and email sent!");
@@ -99,6 +117,45 @@ async function submitForm(event) {
     showAlert("Failed to submit the form. Please try again.");
     console.error("Error submitting form:", error);
   }
+}
+
+// Track how many employee rows have been added
+let employeeRowCount = 1;
+
+function addEmployeeRow() {
+
+  if (employeeRowCount >= 10) {
+    showAlert("You’ve reached the maximum of 10 employees.");
+    return;
+  }
+  employeeRowCount++;
+
+
+  const tableBody = document.querySelector("#employeeTable tbody");
+  const newRow = document.createElement("tr");
+  const employeeCell = document.createElement("td");
+  employeeCell.innerHTML = `
+    <label></label>
+    <input type="text" id="employee${employeeRowCount}" placeholder="Employee ${employeeRowCount}" />
+  `;
+
+  const hoursCell = document.createElement("td");
+  hoursCell.innerHTML = `
+    <label></label>
+    <input type="text"/>
+  `;
+
+  const tipsCell = document.createElement("td");
+  tipsCell.innerHTML = `
+    <label></label>
+    <input type="text"/>
+  `;
+
+  newRow.appendChild(employeeCell);
+  newRow.appendChild(hoursCell);
+  newRow.appendChild(tipsCell);
+
+  tableBody.appendChild(newRow);
 }
 
 function calculateTotal() {
@@ -154,8 +211,10 @@ function calculateTotal() {
 
 function calculateTip() {
   const cashTips = parseFloat(document.getElementById("cashTips").value) || 0;
-  const creditCardTips = parseFloat(document.getElementById("creditCardTips").value) || 0;
-  const totalHours = parseFloat(document.getElementById("totalHours").value) || 0;
+  const creditCardTips =
+    parseFloat(document.getElementById("creditCardTips").value) || 0;
+  const totalHours =
+    parseFloat(document.getElementById("totalHours").value) || 0;
 
   const totalTips = cashTips + creditCardTips;
   document.getElementById("totalTips").value = totalTips.toFixed(2);
@@ -184,7 +243,6 @@ function showAlert(message) {
     }
   };
 }
-
 
 function resetForm() {
   employeeRowCount = 1;
@@ -244,4 +302,3 @@ document.addEventListener("DOMContentLoaded", function () {
   const options = { year: "numeric", month: "long", day: "numeric" };
   currentDateElement.textContent = today.toLocaleDateString(undefined, options);
 });
-

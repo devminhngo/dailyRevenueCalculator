@@ -18,7 +18,7 @@ function sendSummaryEmail(data) {
     Credit Card Tips: $${data.creditCardTips}
     Total Tips: $${data.totalTips}
     Tips Per Hour: $${data.tipsPerHours}
-    Employees: ${data.employee1}, ${data.employee2}
+    Employees: ${data.employee1} ${data.employee2} ${data.employee3} ${data.employee4} ${data.employee5} ${data.employee6} ${data.employee7} ${data.employee8} ${data.employee9} ${data.employee10} 
 
     Breakdown:
     $100 Bills: ${data.$100}
