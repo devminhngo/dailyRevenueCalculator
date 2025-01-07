@@ -14,9 +14,11 @@ function sendSummaryEmail(data) {
     Daily Revenue Summary:
     
     Total Cash: $${data.totalCash}
+    Cash Tips: $${data.cashTips}
+    Credit Card Tips: $${data.creditCardTips}
     Total Tips: $${data.totalTips}
     Tips Per Hour: $${data.tipsPerHours}
-    Employees: ${data.employees}
+    Employees: ${data.employee1}, ${data.employee2}
 
     Breakdown:
     $100 Bills: ${data.$100}
@@ -24,7 +26,7 @@ function sendSummaryEmail(data) {
     $20 Bills: ${data.$20}
     $10 Bills: ${data.$10}
     $5 Bills: ${data.$5}
-    $2 Bills: ${data.$2}
+    $2 Bills: ${data.$2} 
     $1 Bills: ${data.$1}
     Quarters: ${data.quarter}
     Dimes: ${data.dime}

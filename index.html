@@ -1,85 +1,207 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Park Meadows Daily Revenue</title>
-    <style>
-      <?!= include('style'); ?> 
+
+    <!-- <style>
+       <?!= include('style'); ?>    
     </style>
+    <script>
+      <?!= include('script'); ?>
+    </script> -->
+
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    
   </head>
   <body>
     <h2>Park Meadows Daily Revenue</h2>
-    <h2 id="currentDate"></h2>
+    <h3 id="currentDate">Date</h3>
 
     <form id="dynamicForm" onsubmit="submitForm(event)">
-      <label for="$100">$100:</label>
-      <input type="number" id="$100" oninput="calculateTotal()" /><br />
+      <div class="tables-container">
+        <!-- Left Table -->
+        <table>
+          <tr>
+            <th>Money Count</th>
+            <th>Count</th>
+            <th>Total</th>
+          </tr>
+          <tr>
+            <td>dollar100</td>
+            <td>
+              <label for="dollar100"></label>
+              <input type="number" id="dollar100" oninput="calculateTotal()" />
+            </td>
+            <td><input type="text" id="dollar100Total" readonly /></td>
+          </tr>
+          <tr>
+            <td>dollar50</td>
+            <td>
+              <label for="dollar50"></label>
+              <input type="number" id="dollar50" oninput="calculateTotal()" />
+            </td>
+            <td><input type="text" id="dollar50Total" readonly /></td>
+          </tr>
+          <tr>
+            <td>dollar20</td>
+            <td>
+              <label for="dollar20"></label>
+              <input type="number" id="dollar20" oninput="calculateTotal()" />
+            </td>
+            <td><input type="text" id="dollar20Total" readonly /></td>
+          </tr>
+          <tr>
+            <td>dollar10</td>
+            <td>
+              <label for="dollar10"></label>
+              <input type="number" id="dollar10" oninput="calculateTotal()" />
+            </td>
+            <td><input type="text" id="dollar10Total" readonly /></td>
+          </tr>
+          <tr>
+            <td>dollar5</td>
+            <td>
+              <label for="dollar5"></label>
+              <input type="number" id="dollar5" oninput="calculateTotal()" />
+            </td>
+            <td><input type="text" id="dollar5Total" readonly /></td>
+          </tr>
+          <tr>
+            <td>dollar2</td>
+            <td>
+              <label for="dollar2"></label>
+              <input type="number" id="dollar2" oninput="calculateTotal()" />
+            </td>
+            <td><input type="text" id="dollar2Total" readonly /></td>
+          </tr>
+        </table>
 
-      <label for="$50">$50</label>
-      <input type="number" id="$50" oninput="calculateTotal()" /><br />
+        <table>
+          <tr>
+            <th>Money Count</th>
+            <th>Count</th>
+            <th>Total</th>
+          </tr>
+          <tr>
+            <td>dollar1</td>
+            <td>
+              <label for="dollar1"></label>
+              <input type="number" id="dollar1" oninput="calculateTotal()" />
+            </td>
+            <td><input type="text" id="dollar1Total" readonly /></td>
+          </tr>
+          <tr>
+            <td>Quarter</td>
+            <td>
+              <label for="Quarter"></label>
+              <input type="number" id="quarter" oninput="calculateTotal()" />
+            </td>
+            <td><input type="text" id="quarterTotal" readonly /></td>
+          </tr>
+          <tr>
+            <td>Dime</td>
+            <td>
+              <label for="dime"></label>
+              <input type="number" id="dime" oninput="calculateTotal()" />
+            </td>
+            <td><input type="text" id="dimeTotal" readonly /></td>
+          </tr>
+          <tr>
+            <td>Nickel</td>
+            <td>
+              <label for="nickel"></label>
+              <input type="number" id="nickel" oninput="calculateTotal()" />
+            </td>
+            <td><input type="text" id="nickelTotal" readonly /></td>
+          </tr>
+          <tr>
+            <td>Penny</td>
+            <td>
+              <label for="penny"></label>
+              <input type="number" id="penny" oninput="calculateTotal()" />
+            </td>
+            <td><input type="text" id="pennyTotal" readonly /></td>
+          </tr>
+          <tr>
+            <td>&nbsp</td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
 
-      <label for="$20">$20</label>
-      <input type="number" id="$20" oninput="calculateTotal()" /><br />
+      <div class="inline-group">
+        <label for="totalCash">Total Cash in Drawer</label>
+        <input type="text" id="totalCash" readonly />
+      </div>
 
-      <label for="$10">$10</label>
-      <input type="number" id="$10" oninput="calculateTotal()" /><br />
+      <div class="inline-group">
+        <label for="cashTips">Cash Tips</label>
+        <input
+          type="number"
+          id="cashTips"
+          oninput="calculateTip()"
+          step="0.01"
+          min="0"
+        />
 
-      <label for="$5">$5</label>
-      <input type="number" id="$5" oninput="calculateTotal()" /><br />
+        <label for="creditcardTips">CC Tips</label>
+        <input
+          type="number"
+          id="creditCardTips"
+          oninput="calculateTip()"
+          step="0.01"
+          min="0"
+        />
 
-      <label for="$2">$2</label>
-      <input type="number" id="$2" oninput="calculateTotal()" /><br />
+        <label for="totalTips">Total Tips</label>
+        <input type="text" id="totalTips" readonly />
+      </div>
 
-      <label for="$1">$1</label>
-      <input type="number" id="$1" oninput="calculateTotal()" /><br />
+      <div class="inline-group">
+        <label for="totalHours">Total Hours</label>
+        <input
+          type="number"
+          id="totalHours"
+          oninput="calculateTip()"
+          step="0.01"
+          min="0"
+        />
 
-      <label for="0.25">$0.25</label>
-      <input type="number" id="$0.25" oninput="calculateTotal()" /><br />
-
-      <label for="dime">$0.1</label>
-      <input type="number" id="$0.1" oninput="calculateTotal()" /><br />
-      <label for="nickel">$0.05</label>
-      <input type="number" id="$0.05" oninput="calculateTotal()" /><br />
-
-      <label for="totalCash">Total Cash</label>
-      <input type="text" id="totalCash" readonly /><br />
-
-      <label for="cashTips">Cash Tips</label>
-      <input
-        type="number"
-        id="cashTips"
-        oninput="calculateTotal()"
-        step="0.01"
-        min="0"
-      /><br />
-
-      <label for="creditcardTips">Credit Card Tips</label>
-      <input
-        type="number"
-        id="creditCardTips"
-        oninput="calculateTotal()"
-        step="0.01"
-        min="0"
-      /><br />
-
-      <label for="totalTips">Total Tips</label>
-      <input type="text" id="totalTips" readonly /><br />
-
-      <label for="hoursWorked">Hours Worked</label>
-      <input
-        type="number"
-        id="hoursWorked"
-        oninput="calculateTotal()"
-        step="0.01"
-        min="0"
-        required
-      /><br />
-
-      <label for="tipsPerHours">Tips Per Hour</label>
-      <input type="text" id="tipsPerHours" readonly /><br /><br />
-
-      <label for="employees">Employees</label>
-      <input type="text" id="employees" required /><br /><br />
-
+        <label for="tipsPerHours">Tips Per Hour</label>
+        <input type="text" id="tipsPerHours" readonly />
+      </div>
+      <div class="tables-container">
+        <table id="employeeTable">
+          <thead>
+            <tr>
+              <th>Employee</th>
+              <th>Hours Worked</th>
+              <th>Total Tips</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <label for="employee1"></label>
+                <input type="text" id="employee1" placeholder="Name" required/>
+              </td>
+              <td>
+                <label></label>
+                <input type="text" readonly />
+              </td>
+              <td>
+                <label></label>
+                <input type="text" readonly />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+   
       <button type="submit">Submit</button>
     </form>
     <!-- Alert Modal -->
@@ -89,8 +211,5 @@
         <p id="alertMessage"></p>
       </div>
     </div>
-    <script>
-      <?!= include('script'); ?>
-    </script>
   </body>
 </html>
