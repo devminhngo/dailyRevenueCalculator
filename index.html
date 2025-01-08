@@ -12,8 +12,8 @@
       <?!= include('script'); ?>
     </script> -->
 
-    <link rel="stylesheet" href="styles.css" />
-    <script defer src="scripts.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
   </head>
   <body>
     <div class="container">
@@ -191,7 +191,7 @@
                 <td><input type="text" id="employee1" placeholder="Name" /></td>
                 <td>
                   <input
-                    type="text"
+                    type="number"
                     id="employee1Hour"
                     oninput="calculateTip()"
                     step="0.01"
@@ -201,18 +201,19 @@
                 </td>
                 <td>
                   <input
-                    type="text"
+                    type="number"
                     id="employee1Tip"
                     placeholder="$"
                     readonly
                   />
                 </td>
               </tr>
-              <tr>
+
+              <tr class="hidden">
                 <td><input type="text" id="employee2" placeholder="Name" /></td>
                 <td>
                   <input
-                    type="text"
+                    type="number"
                     id="employee2Hour"
                     oninput="calculateTip()"
                     step="0.01"
@@ -222,8 +223,186 @@
                 </td>
                 <td>
                   <input
-                    type="text"
+                    type="number"
                     id="employee2Tip"
+                    placeholder="$"
+                    readonly
+                  />
+                </td>
+              </tr>
+
+              <tr class="hidden">
+                <td><input type="text" id="employee3" placeholder="Name" /></td>
+                <td>
+                  <input
+                    type="number"
+                    id="employee3Hour"
+                    oninput="calculateTip()"
+                    step="0.01"
+                    min="0"
+                    placeholder="Time"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    id="employee3Tip"
+                    placeholder="$"
+                    readonly
+                  />
+                </td>
+              </tr>
+
+              <tr class="hidden">
+                <td><input type="text" id="employee4" placeholder="Name" /></td>
+                <td>
+                  <input
+                    type="number"
+                    id="employee4Hour"
+                    oninput="calculateTip()"
+                    step="0.01"
+                    min="0"
+                    placeholder="Time"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    id="employee4Tip"
+                    placeholder="$"
+                    readonly
+                  />
+                </td>
+              </tr>
+
+              <tr class="hidden">
+                <td><input type="text" id="employee5" placeholder="Name" /></td>
+                <td>
+                  <input
+                    type="number"
+                    id="employee5Hour"
+                    oninput="calculateTip()"
+                    step="0.01"
+                    min="0"
+                    placeholder="Time"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    id="employee5Tip"
+                    placeholder="$"
+                    readonly
+                  />
+                </td>
+              </tr>
+
+              <tr class="hidden">
+                <td><input type="text" id="employee6" placeholder="Name" /></td>
+                <td>
+                  <input
+                    type="number"
+                    id="employee6Hour"
+                    oninput="calculateTip()"
+                    step="0.01"
+                    min="0"
+                    placeholder="Time"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    id="employee6Tip"
+                    placeholder="$"
+                    readonly
+                  />
+                </td>
+              </tr>
+
+              <tr class="hidden">
+                <td><input type="text" id="employee7" placeholder="Name" /></td>
+                <td>
+                  <input
+                    type="number"
+                    id="employee7Hour"
+                    oninput="calculateTip()"
+                    step="0.01"
+                    min="0"
+                    placeholder="Time"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    id="employee7Tip"
+                    placeholder="$"
+                    readonly
+                  />
+                </td>
+              </tr>
+
+              <tr class="hidden">
+                <td><input type="text" id="employee8" placeholder="Name" /></td>
+                <td>
+                  <input
+                    type="number"
+                    id="employee8Hour"
+                    oninput="calculateTip()"
+                    step="0.01"
+                    min="0"
+                    placeholder="Time"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    id="employee8Tip"
+                    placeholder="$"
+                    readonly
+                  />
+                </td>
+              </tr>
+
+              <tr class="hidden">
+                <td><input type="text" id="employee9" placeholder="Name" /></td>
+                <td>
+                  <input
+                    type="number"
+                    id="employee9Hour"
+                    oninput="calculateTip()"
+                    step="0.01"
+                    min="0"
+                    placeholder="Time"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    id="employee9Tip"
+                    placeholder="$"
+                    readonly
+                  />
+                </td>
+              </tr>
+
+              <tr class="hidden">
+                <td>
+                  <input type="text" id="employee10" placeholder="Name" />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    id="employee10Hour"
+                    oninput="calculateTip()"
+                    step="0.01"
+                    min="0"
+                    placeholder="Time"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    id="employee10Tip"
                     placeholder="$"
                     readonly
                   />

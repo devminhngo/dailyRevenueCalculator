@@ -1,3 +1,4 @@
+
 async function submitForm(event) {
   event.preventDefault();
 
@@ -28,7 +29,38 @@ async function submitForm(event) {
   const employee2Hour = document.getElementById("employee2Hour").value; 
   const employee2Tip = document.getElementById("employee2Tip").value;
 
+  const employee3 = document.getElementById("employee3").value;
+  const employee3Hour = document.getElementById("employee3Hour").value; 
+  const employee3Tip = document.getElementById("employee3Tip").value;
 
+  const employee4 = document.getElementById("employee4").value;
+  const employee4Hour = document.getElementById("employee4Hour").value; 
+  const employee4Tip = document.getElementById("employee4Tip").value;
+
+  const employee5 = document.getElementById("employee5").value;
+  const employee5Hour = document.getElementById("employee5Hour").value; 
+  const employee5Tip = document.getElementById("employee5Tip").value;
+
+  const employee6 = document.getElementById("employee6").value;
+  const employee6Hour = document.getElementById("employee6Hour").value;
+  const employee6Tip = document.getElementById("employee6Tip").value;
+
+  const employee7 = document.getElementById("employee7").value;
+  const employee7Hour = document.getElementById("employee7Hour").value;
+  const employee7Tip = document.getElementById("employee7Tip").value;
+
+  const employee8 = document.getElementById("employee8").value;
+  const employee8Hour = document.getElementById("employee8Hour").value;
+  const employee8Tip = document.getElementById("employee8Tip").value;
+
+  const employee9 = document.getElementById("employee9").value;
+  const employee9Hour = document.getElementById("employee9Hour").value;
+  const employee9Tip = document.getElementById("employee9Tip").value;
+
+  const employee10 = document.getElementById("employee10").value;
+  const employee10Hour = document.getElementById("employee10Hour").value;
+  const employee10Tip = document.getElementById("employee10Tip").value;
+  
   // Google Form URL and Entry IDs
   const formURL =
     "https://docs.google.com/forms/d/e/1FAIpQLSeyHEKMM3bey-CI6SZ9NFvggHdL-mE6m82Nrrtm_OYe_l8qfg/formResponse";
@@ -53,21 +85,44 @@ async function submitForm(event) {
   formData.append("entry.4514394", tipsPerHours); //17
 
   formData.append("entry.327614031", employee1); //18
-  formData.append("entry.149025361", employee1Hour); //18
-  formData.append("entry.457081833", employee1Tip); //18
+  formData.append("entry.149025361", employee1Hour); //19
+  formData.append("entry.457081833", employee1Tip); //20
 
-  formData.append("entry.985937245", employee2); //19
-  formData.append("entry.139079485", employee2Hour); //18
-  formData.append("entry.2029080166", employee2Tip); //18
+  formData.append("entry.985937245", employee2); //21
+  formData.append("entry.139079485", employee2Hour); //22
+  formData.append("entry.2029080166", employee2Tip); //23
 
-  // formData.append("entry.32268275", employee3); //20
-  // formData.append("entry.677445114", employee4); //21
-  // formData.append("entry.186781676", employee5); //22
-  // formData.append("entry.90846170", employee6); //23
-  // formData.append("entry.939478897", employee7); //24
-  // formData.append("entry.1967954126", employee8); //25
-  // formData.append("entry.326229070", employee9); //26
-  // formData.append("entry.642011690", employee10); //27
+  formData.append("entry.32268275", employee3); //24
+  formData.append("entry.588489638", employee3Hour); //25
+  formData.append("entry.1419105835", employee3Tip); //26
+
+  formData.append("entry.677445114", employee4); //27
+  formData.append("entry.1718511892", employee4Hour); //28
+  formData.append("entry.2062698025", employee4Tip); //29
+
+  formData.append("entry.186781676", employee5); //30
+  formData.append("entry.2135084544", employee5Hour); //31
+  formData.append("entry.1866013795", employee5Tip); //32
+
+  formData.append("entry.90846170", employee6); //33
+  formData.append("entry.1904667002", employee6Hour); //34
+  formData.append("entry.1859071159", employee6Tip); //35
+
+  formData.append("entry.939478897", employee7); //36
+  formData.append("entry.1651459784", employee7Hour); //37
+  formData.append("entry.1384862999", employee7Tip); //38
+
+  formData.append("entry.1967954126", employee8); //39
+  formData.append("entry.611891140", employee8Hour); //40
+  formData.append("entry.173505653", employee8Tip); //41
+
+  formData.append("entry.326229070", employee9); //42
+  formData.append("entry.1664580093", employee9Hour); //43
+  formData.append("entry.406033651", employee9Tip); //44
+
+  formData.append("entry.642011690", employee10); //45
+  formData.append("entry.93211156", employee10Hour); //46
+  formData.append("entry.1836842277", employee10Tip); //47
 
   try {
     // Submit form data
@@ -105,6 +160,38 @@ async function submitForm(event) {
       const employee2 = document.getElementById("employee2").value;
       const employee2Hour = document.getElementById("employee2Hour").value; 
       const employee2Tip = document.getElementById("employee2Tip").value;
+
+      const employee3 = document.getElementById("employee3").value;
+      const employee3Hour = document.getElementById("employee3Hour").value; 
+      const employee3Tip = document.getElementById("employee3Tip").value;
+    
+      const employee4 = document.getElementById("employee4").value;
+      const employee4Hour = document.getElementById("employee4Hour").value; 
+      const employee4Tip = document.getElementById("employee4Tip").value;
+
+      const employee5 = document.getElementById("employee5").value;
+      const employee5Hour = document.getElementById("employee5Hour").value; 
+      const employee5Tip = document.getElementById("employee5Tip").value;
+    
+      const employee6 = document.getElementById("employee6").value;
+      const employee6Hour = document.getElementById("employee6Hour").value;
+      const employee6Tip = document.getElementById("employee6Tip").value;
+    
+      const employee7 = document.getElementById("employee7").value;
+      const employee7Hour = document.getElementById("employee7Hour").value;
+      const employee7Tip = document.getElementById("employee7Tip").value;
+    
+      const employee8 = document.getElementById("employee8").value;
+      const employee8Hour = document.getElementById("employee8Hour").value;
+      const employee8Tip = document.getElementById("employee8Tip").value;
+    
+      const employee9 = document.getElementById("employee9").value;
+      const employee9Hour = document.getElementById("employee9Hour").value;
+      const employee9Tip = document.getElementById("employee9Tip").value;
+    
+      const employee10 = document.getElementById("employee10").value;
+      const employee10Hour = document.getElementById("employee10Hour").value;
+      const employee10Tip = document.getElementById("employee10Tip").value;
     
     
       // Google Form URL and Entry IDs
@@ -138,14 +225,37 @@ async function submitForm(event) {
       formData.append("entry.139079485", employee2Hour); //18
       formData.append("entry.2029080166", employee2Tip); //18
     
-      // formData.append("entry.32268275", employee3); //20
-      // formData.append("entry.677445114", employee4); //21
-      // formData.append("entry.186781676", employee5); //22
-      // formData.append("entry.90846170", employee6); //23
-      // formData.append("entry.939478897", employee7); //24
-      // formData.append("entry.1967954126", employee8); //25
-      // formData.append("entry.326229070", employee9); //26
-      // formData.append("entry.642011690", employee10); //27
+      formData.append("entry.32268275", employee3); //24
+      formData.append("entry.588489638", employee3Hour); //25
+      formData.append("entry.1419105835", employee3Tip); //26
+    
+      formData.append("entry.677445114", employee4); //27
+      formData.append("entry.1718511892", employee4Hour); //28
+      formData.append("entry.2062698025", employee4Tip); //29
+
+      formData.append("entry.186781676", employee5); //30
+      formData.append("entry.2135084544", employee5Hour); //31
+      formData.append("entry.1866013795", employee5Tip); //32
+    
+      formData.append("entry.90846170", employee6); //33
+      formData.append("entry.1904667002", employee6Hour); //34
+      formData.append("entry.1859071159", employee6Tip); //35
+    
+      formData.append("entry.939478897", employee7); //36
+      formData.append("entry.1651459784", employee7Hour); //37
+      formData.append("entry.1384862999", employee7Tip); //38
+    
+      formData.append("entry.1967954126", employee8); //39
+      formData.append("entry.611891140", employee8Hour); //40
+      formData.append("entry.173505653", employee8Tip); //41
+    
+      formData.append("entry.326229070", employee9); //42
+      formData.append("entry.1664580093", employee9Hour); //43
+      formData.append("entry.406033651", employee9Tip); //44
+    
+      formData.append("entry.642011690", employee10); //45
+      formData.append("entry.93211156", employee10Hour); //46
+      formData.append("entry.1836842277", employee10Tip); //47
     
       try {
         // Submit form data
@@ -180,14 +290,30 @@ async function submitForm(event) {
           employee2,
           employee2Hour,
           employee2Tip,
-          // employee3,
-          // employee4,
-          // employee5,
-          // employee6,
-          // employee7,
-          // employee8,
-          // employee9,
-          // employee10,
+          employee3,
+          employee3Hour,
+          employee3Tip,
+          employee4,
+          employee4Hour,
+          employee4Tip,
+          employee5,
+          employee5Hour,
+          employee5Tip,
+          employee6,
+          employee6Hour,
+          employee6Tip,
+          employee7,
+          employee7Hour,
+          employee7Tip,
+          employee8,
+          employee8Hour,
+          employee8Tip,
+          employee9,
+          employee9Hour,
+          employee9Tip,
+          employee10,
+          employee10Hour,
+          employee10Tip,
         });
     
         showAlert("Form submitted successfully, and email sent!");
@@ -412,14 +538,30 @@ async function submitForm(event) {
       employee2,
       employee2Hour,
       employee2Tip,
-      // employee3,
-      // employee4,
-      // employee5,
-      // employee6,
-      // employee7,
-      // employee8,
-      // employee9,
-      // employee10,
+      employee3,
+      employee3Hour,
+      employee3Tip,
+      employee4,
+      employee4Hour,
+      employee4Tip,
+      employee5,
+      employee5Hour,
+      employee5Tip,
+      employee6,
+      employee6Hour,
+      employee6Tip,
+      employee7,
+      employee7Hour,
+      employee7Tip,
+      employee8,
+      employee8Hour,
+      employee8Tip,
+      employee9,
+      employee9Hour,
+      employee9Tip,
+      employee10,
+      employee10Hour,
+      employee10Tip,
     });
 
     showAlert("Form submitted successfully, and email sent!");
@@ -430,7 +572,7 @@ async function submitForm(event) {
   }
 }
 
-// Track how many employee rows have been added
+
 let employeeRowCount = 1; 
 
 function addEmployeeRow() {
@@ -549,17 +691,17 @@ function showAlert(message) {
 
 
 function resetForm() {
-  employeeRowCount = 1;
-  const rows = document.querySelectorAll("#employeeTable tbody tr");
-  rows.forEach((row, index) => {
-    if (index > 0) {
-      row.classList.add("hidden");
-    }
-  });
+  // employeeRowCount = 1;
+  // const rows = document.querySelectorAll("#employeeTable tbody tr");
+  // rows.forEach((row, index) => {
+  //   if (index > 0) {
+  //     row.classList.add("hidden");
+  //   }
+  // });
 
-  document.querySelectorAll("input").forEach((input) => {
-    input.value = "";
-  });
+  // document.querySelectorAll("input").forEach((input) => {
+  //   input.value = "";
+  // });
 }
 
 //Enter key to move focus to the next input field in the form
