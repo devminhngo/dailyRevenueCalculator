@@ -20,7 +20,7 @@
       <h1>DAILY REVENUE</h1>
       <h3>Location: Park Meadows</h3>
       <h3 id="currentDate">Date</h3>
-      <form id="dynamicForm" onsubmit="submitForm(event)">
+      <form id="dynamicForm" autocomplete="off" onsubmit="submitForm(event)">
         <div class="tables-container">
           <table>
             <tr>
@@ -183,12 +183,12 @@
               <tr>
                 <th>Employee</th>
                 <th>Hours Worked</th>
-                <th>Total Tips</th>
+                <th>Tips</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><input type="text" id="employee1" placeholder="Name" /></td>
+                <td><input type="text" id="employee1" placeholder="Name" required /></td>
                 <td>
                   <input
                     type="number"
@@ -410,20 +410,11 @@
               </tr>
             </tbody>
           </table>
-
-          <!-- Button to add more employees -->
         </div>
         <button type="button" onclick="addEmployeeRow()">+ Add Employee</button>
         
-        <button type="submit">Submit</button>
+        <button type="submit" class="submit-btn">Submit</button>
       </form>
-      <!-- Alert Modal -->
-      <div id="alertModal" class="modal">
-        <div class="modal-content">
-          <span id="closeModal" class="close">&times;</span>
-          <p id="alertMessage"></p>
-        </div>
-      </div>
     </div>
   </body>
 </html>

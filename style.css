@@ -1,9 +1,8 @@
-/* General Body Styling */
 body {
   font-family: 'Roboto', Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f0f4f8;
+  background-color: #0b162f;
   color: #333;
   line-height: 1.2;
 }
@@ -31,7 +30,6 @@ h2, h3 {
   border: 1px solid #ddd;
 }
 
-/* Table Styling */
 .tables-container {
   display: flex;
   flex-wrap: wrap;
@@ -82,22 +80,20 @@ input:focus {
   outline: none;
 }
 
-input[type="text"]:read-only {
+input:read-only {
   background-color: #f4f4f4;
   border-color: #ccc;
 }
 
 #employeeTable {
-  width: 80%;
   max-width: 600px;
-  margin: 0 auto 20px;
+  margin: 0 auto 20px ;
 }
 
 .hidden {
   display: none;
 }
 
-/* Inline Group Styling */
 .inline-group {
   display: flex;
   justify-content: center;
@@ -119,7 +115,6 @@ input[type="text"]:read-only {
   font-size: 14px;
 }
 
-/* Buttons */
 button {
   display: block;
   margin: 20px auto;
@@ -137,69 +132,13 @@ button:hover {
   background-color: #2980b9;
 }
 
-/* Modal Styling */
-.modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+.submit-btn {
+  background-color: #cc2e3e;
+  padding: 15px 80px;
 }
 
-.modal.show {
-  display: block;
-  opacity: 1;
+.submit-btn:hover {
+  background-color: #5f0b12;
 }
 
-.modal-content {
-  background-color: #fff;
-  margin: 15% auto;
-  padding: 20px;
-  border-radius: 10px;
-  width: 80%;
-  max-width: 400px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.modal-content p {
-  text-align: center;
-  font-size: 16px;
-}
-
-.close {
-  float: right;
-  font-size: 18px;
-  cursor: pointer;
-  color: #333;
-}
-
-.close:hover {
-  color: #e74c3c;
-}
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-  .tables-container {
-    flex-direction: column;
-  }
-
-  table {
-    min-width: unset;
-    width: 100%;
-  }
-
-  input[type="number"], input[type="text"] {
-    font-size: 12px;
-  }
-
-  button {
-    font-size: 14px;
-    padding: 10px 15px;
-  }
-}
 

@@ -11,11 +11,8 @@ function setInputValue(id, value) {
 // Submit the form to Google Forms and Google Apps Script
 async function submitForm(event) {
   event.preventDefault();
-
-  // Form data collection for Google Forms
   const formData = new FormData();
 
-  // Currency fields
   const denominations = [
     { id: "dollar100", entry: "entry.620449416" },
     { id: "dollar50", entry: "entry.1257815732" },
@@ -34,7 +31,6 @@ async function submitForm(event) {
     formData.append(entry, getInputValue(id));
   });
 
-  // Other form fields
   const otherFields = [
     { id: "totalCash", entry: "entry.1226012656" },
     { id: "cashTips", entry: "entry.642661969" },
@@ -48,7 +44,6 @@ async function submitForm(event) {
     formData.append(entry, getInputValue(id));
   });
 
-  // Employee fields
   const employees = [
     {
       name: "employee1",
@@ -160,15 +155,14 @@ async function submitForm(event) {
 
   const formURL =
     "https://docs.google.com/forms/d/e/1FAIpQLSeyHEKMM3bey-CI6SZ9NFvggHdL-mE6m82Nrrtm_OYe_l8qfg/formResponse";
-
-  try {
-    // Submit to Google Form
-    await fetch(formURL, {
-      method: "POST",
-      body: formData,
-      mode: "no-cors",
-    });
-
+    try {
+      // Submit to Google Form
+      await fetch(formURL, {
+        method: "POST",
+        body: formData,
+        mode: "no-cors",
+      });
+      
     // Prepare data for Apps Script
     const scriptData = {
       dollar100: getInputValue("dollar100"),
@@ -195,23 +189,15 @@ async function submitForm(event) {
     };
 
     // Send data to Apps Script for email
-    google.script.run
-      .withSuccessHandler(() => {
-        showAlert("Form submitted successfully, and email sent!");
-        resetForm();
-      })
-      .withFailureHandler((error) => {
-        console.error("Error while sending email:", error);
-        showAlert("Failed to send email. Please try again.");
-      })
-      .sendSummaryEmail(scriptData);
+    google.script.run.sendSummaryEmail(scriptData);
+    alert("Form submitted successfully, and email sent!");
+    resetForm();
   } catch (error) {
-    showAlert("Failed to submit the form. Please try again.");
+    alert("Failed to submit the form. Please try again.");
     console.error("Error submitting form:", error);
   }
 }
 
-// Calculate totals for currency
 function calculateTotal() {
   const denominations = [
     { id: "dollar100", multiplier: 100 },
@@ -238,7 +224,6 @@ function calculateTotal() {
   setInputValue("totalCash", totalCash.toFixed(2));
 }
 
-// Calculate tips and distribute them
 function calculateTip() {
   const cashTips = getInputValue("cashTips");
   const creditCardTips = getInputValue("creditCardTips");
@@ -268,7 +253,6 @@ function calculateTip() {
   });
 }
 
-// Reset the form
 function resetForm() {
   document.querySelectorAll("input").forEach((input) => {
     input.value = "";
@@ -296,21 +280,6 @@ function addEmployeeRow() {
   if (nextRow) {
     nextRow.classList.remove("hidden");
   }
-}
-
-// Show alert
-function showAlert(message) {
-  const modal = document.getElementById("alertModal");
-  const messageElement = document.getElementById("alertMessage");
-  const closeModal = document.getElementById("closeModal");
-
-  messageElement.textContent = message;
-  modal.style.display = "block";
-
-  closeModal.onclick = () => (modal.style.display = "none");
-  window.onclick = (event) => {
-    if (event.target === modal) modal.style.display = "none";
-  };
 }
 
 // Navigate with Enter key

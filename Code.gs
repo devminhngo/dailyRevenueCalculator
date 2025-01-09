@@ -9,7 +9,7 @@ function include(filename) {
 
 function sendSummaryEmail(data) {
   const recipient = "shinerism@gmail.com";
-  const subject = "Detailed Park Meadows Daily Revenue Summary";
+  const subject = "Park Meadows Daily Revenue Summary";
   const body = `
     <div style="font-family: 'Roboto', Arial, sans-serif; line-height: 1.5; color: #333;">
       <h1 style="color: #3498db; text-align: center;">Daily Revenue Summary</h1>
@@ -28,7 +28,7 @@ function sendSummaryEmail(data) {
           <tr>
             <th style="border: 1px solid #ddd; padding: 8px; background-color: #3498db; color: white;">Employee</th>
             <th style="border: 1px solid #ddd; padding: 8px; background-color: #3498db; color: white;">Hours Worked</th>
-            <th style="border: 1px solid #ddd; padding: 8px; background-color: #3498db; color: white;">Total Tips</th>
+            <th style="border: 1px solid #ddd; padding: 8px; background-color: #3498db; color: white;">Tips</th>
           </tr>
         </thead>
         <tbody>
