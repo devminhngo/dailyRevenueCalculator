@@ -11,40 +11,77 @@ function sendSummaryEmail(data) {
   const recipient = "shinerism@gmail.com";
   const subject = "Detailed Park Meadows Daily Revenue Summary";
   const body = `
-    Daily Revenue Summary:
-    
-    Total Cash: $${data.totalCash}
-    Cash Tips: $${data.cashTips}
-    Credit Card Tips: $${data.creditCardTips}
-    Total Tips: $${data.totalTips}
-    Tips Per Hour: $${data.tipsPerHours}
-    Employees: 
-    ${data.employee1} ${data.employee1Hour} hours  $${data.employee1Tip}
-    ${data.employee2} ${data.employee2Hour} hours  $${data.employee2Tip}
-    ${data.employee3} ${data.employee3Hour} hours  $${data.employee3Tip}
-    ${data.employee4} ${data.employee4Hour} hours  $${data.employee4Tip}
-    ${data.employee5} ${data.employee5Hour} hours  $${data.employee5Tip}
-    ${data.employee6} ${data.employee6Hour} hours  $${data.employee6Tip}
-    ${data.employee7} ${data.employee7Hour} hours  $${data.employee7Tip}
-    ${data.employee8} ${data.employee8Hour} hours  $${data.employee8Tip}
-    ${data.employee9} ${data.employee9Hour} hours  $${data.employee9Tip}
-    ${data.employee10} ${data.employee10Hour} hours  $${data.employee10Tip}
+    <div style="font-family: 'Roboto', Arial, sans-serif; line-height: 1.5; color: #333;">
+      <h1 style="color: #3498db; text-align: center;">Daily Revenue Summary</h1>
+      <h3 style="text-align: center; color: #2c3e50;">Location: Park Meadows</h3>
+      
+      <div style="margin: 20px auto; max-width: 600px; padding: 20px; background-color: #f9f9f9; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <p><strong>Total Cash:</strong> $${data.totalCash}</p>
+        <p><strong>Cash Tips:</strong> $${data.cashTips}</p>
+        <p><strong>Credit Card Tips:</strong> $${data.creditCardTips}</p>
+        <p><strong>Total Tips:</strong> $${data.totalTips}</p>
+        <p><strong>Tips Per Hour:</strong> $${data.tipsPerHours}</p>
+      </div>
 
-    Breakdown:
-    $100 Bills: ${data.dollar100}
-    $50 Bills: ${data.dollar50}
-    $20 Bills: ${data.dollar20}
-    $10 Bills: ${data.dollar10}
-    $5 Bills: ${data.dollar5}
-    $2 Bills: ${data.dollar2} 
-    $1 Bills: ${data.dollar1}
-    Quarters: ${data.quarter}
-    Dimes: ${data.dime}
-    Nickels: ${data.nickel}
-    Pennys: ${data.penny}
+      <table style="width: 100%; border-collapse: collapse; margin: 20px auto; max-width: 600px; font-size: 14px;">
+        <thead>
+          <tr>
+            <th style="border: 1px solid #ddd; padding: 8px; background-color: #3498db; color: white;">Employee</th>
+            <th style="border: 1px solid #ddd; padding: 8px; background-color: #3498db; color: white;">Hours Worked</th>
+            <th style="border: 1px solid #ddd; padding: 8px; background-color: #3498db; color: white;">Total Tips</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${generateEmployeeRows(data)}
+        </tbody>
+      </table>
 
-    Submitted by: Park Meadows Revenue Tracker.
+      <h3 style="text-align: center; color: #2c3e50;">Breakdown</h3>
+
+      <div style="margin: 20px auto; max-width: 600px; padding: 20px; background-color: #f9f9f9; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+      <p><strong>$100 Bills:</strong> ${data.dollar100}</p>
+      <p><strong>$50 Bills:</strong> ${data.dollar50}</p>
+      <p><strong>$20 Bills:</strong> ${data.dollar20}</p>
+      <p><strong>$10 Bills:</strong> ${data.dollar10}</p>
+      <p><strong>$5 Bills:</strong> ${data.dollar5}</p>
+      <p><strong>$1 Bills:</strong> ${data.dollar1}</p>
+      <p><strong>Quarters:</strong> ${data.quarter}</p>
+      <p><strong>Dimes:</strong> ${data.dime}</p>
+      <p><strong>Nickels:</strong> ${data.nickel}</p>
+      <p><strong>Pennies:</strong> ${data.penny}</p>
+      <p><strong>$2 Bills:</strong> ${data.dollar2}</p>
+      </div>
+      
+      <p style="text-align: center; color: #7f8c8d; font-size: 12px;">
+        Submitted by: <strong>Minh Khoai To</strong>
+      </p>
+    </div>
   `;
-  MailApp.sendEmail(recipient, subject, body);
+
+  try {
+    MailApp.sendEmail({
+      to: recipient,
+      subject: subject,
+      htmlBody: body
+    });
+    Logger.log("Email sent successfully to %s", recipient);
+  } catch (error) {
+    Logger.log("Error sending email: %s", error.message);
+  }
+}
+
+function generateEmployeeRows(data) {
+  return data.employees
+    .filter(emp => emp.name) // Only include employees with a name
+    .map(
+      emp => `
+        <tr>
+          <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">${emp.name}</td>
+          <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">${emp.hours}</td>
+          <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">$${emp.tips}</td>
+        </tr>
+      `
+    )
+    .join("");
 }
 
