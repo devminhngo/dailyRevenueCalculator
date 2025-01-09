@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
 body {
   font-family: 'Roboto', Arial, sans-serif;
   margin: 0;
@@ -85,6 +91,7 @@ input:read-only {
   border-color: #ccc;
 }
 
+
 #employeeTable {
   max-width: 600px;
   margin: 0 auto 20px ;
@@ -139,6 +146,183 @@ button:hover {
 
 .submit-btn:hover {
   background-color: #5f0b12;
+}
+
+.toast-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.toast {
+  min-width: 200px;
+  max-width: 300px;
+  padding: 15px;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.3s ease, fadeOut 0.5s ease 3.5s;
+}
+
+
+.toast.success {
+  background-color: #4caf50;
+}
+
+.toast.error {
+  background-color: #f44336;
+}
+
+.toast .close-btn {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Fade out animation */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) { 
+  .container {
+    padding: 15px;
+    max-width: 90%; 
+  }
+
+  .tables-container {
+    flex-direction: column; 
+  }
+
+  table {
+    min-width: 100%; 
+  }
+
+  input[type="number"], input[type="text"] {
+    font-size: 12px;
+  }
+
+  .inline-group {
+    flex-direction: column; 
+    gap: 10px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+
+  .submit-btn {
+    padding: 12px 60px;
+  }
+}
+
+@media (max-width: 768px) { 
+  h1, h2, h3 {
+    font-size: 18px; 
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  .tables-container {
+    gap: 10px;
+  }
+
+  table {
+    box-shadow: none; 
+  }
+
+  th, td {
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .submit-btn {
+    padding: 10px 50px;
+  }
+}
+
+@media (max-width: 480px) { 
+  body {
+    font-size: 14px; 
+  }
+
+  h1, h2, h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
+  .container {
+    padding: 8px;
+    max-width: 95%;
+  }
+
+  .tables-container {
+    gap: 5px;
+  }
+
+  table {
+    min-width: 100%;
+    border: none; /* Simplify table borders */
+  }
+
+  th, td {
+    font-size: 10px;
+    padding: 5px;
+  }
+
+  input[type="number"], input[type="text"] {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .inline-group {
+    gap: 8px;
+  }
+
+  button {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+
+  .submit-btn {
+    padding: 10px 40px;
+  }
 }
 
 

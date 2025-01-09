@@ -190,10 +190,10 @@ async function submitForm(event) {
 
     // Send data to Apps Script for email
     google.script.run.sendSummaryEmail(scriptData);
-    alert("Form submitted successfully, and email sent!");
+    showToast("Form submitted successfully, and email sent!", "success");
     resetForm();
   } catch (error) {
-    alert("Failed to submit the form. Please try again.");
+    showToast("Failed to submit the form. Please try again.", "error");
     console.error("Error submitting form:", error);
   }
 }
@@ -280,6 +280,34 @@ function addEmployeeRow() {
   if (nextRow) {
     nextRow.classList.remove("hidden");
   }
+}
+
+function showToast(message, type = "success") {
+  const toastContainer = document.getElementById("toastContainer");
+
+  // Create toast element
+  const toast = document.createElement("div");
+  toast.className = `toast ${type}`;
+  toast.innerHTML = `
+    <span>${message}</span>
+    <span class="close-btn">&times;</span>
+  `;
+
+  // Add close functionality
+  const closeBtn = toast.querySelector(".close-btn");
+  closeBtn.onclick = () => {
+    toastContainer.removeChild(toast);
+  };
+
+  // Append toast to container
+  toastContainer.appendChild(toast);
+
+  // Remove toast after 4 seconds
+  setTimeout(() => {
+    if (toast.parentNode === toastContainer) {
+      toastContainer.removeChild(toast);
+    }
+  }, 4000);
 }
 
 // Navigate with Enter key
