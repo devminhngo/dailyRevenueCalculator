@@ -82,6 +82,10 @@ input[type="text"]:read-only {
   border-color: #ccc;
 }
 
+.hidden {
+  display: none;
+}
+
 /* Inline Group Styling */
 .inline-group {
   display: flex;

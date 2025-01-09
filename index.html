@@ -172,13 +172,7 @@
 
         <div class="inline-group">
           <label for="totalHours">Total Hours</label>
-          <input
-            type="number"
-            id="totalHours"
-            oninput="calculateTip()"
-            step="0.01"
-            min="0"
-          />
+          <input type="number" id="totalHours" readonly />
 
           <label for="tipsPerHours">Tips Per Hour</label>
           <input type="text" id="tipsPerHours" readonly />
@@ -194,16 +188,45 @@
             </thead>
             <tbody>
               <tr>
+                <td><input type="text" id="employee1" placeholder="Name" /></td>
                 <td>
-                  <input type="text" id="employee1" placeholder="Name" />
+                  <input
+                    type="text"
+                    id="employee1Hour"
+                    oninput="calculateTip()"
+                    step="0.01"
+                    min="0"
+                    placeholder="Time"
+                  />
                 </td>
                 <td>
-                  <label></label>
-                  <input type="text" />
+                  <input
+                    type="text"
+                    id="employee1Tip"
+                    placeholder="$"
+                    readonly
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td><input type="text" id="employee2" placeholder="Name" /></td>
+                <td>
+                  <input
+                    type="text"
+                    id="employee2Hour"
+                    oninput="calculateTip()"
+                    step="0.01"
+                    min="0"
+                    placeholder="Time"
+                  />
                 </td>
                 <td>
-                  <label></label>
-                  <input type="text" />
+                  <input
+                    type="text"
+                    id="employee2Tip"
+                    placeholder="$"
+                    readonly
+                  />
                 </td>
               </tr>
             </tbody>
