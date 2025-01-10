@@ -14,17 +14,17 @@ async function submitForm(event) {
   const formData = new FormData();
 
   const denominations = [
-    { id: "dollar100", entry: "entry.620449416" },
-    { id: "dollar50", entry: "entry.1257815732" },
-    { id: "dollar20", entry: "entry.1364637093" },
-    { id: "dollar10", entry: "entry.430719215" },
-    { id: "dollar5", entry: "entry.301685711" },
-    { id: "dollar2", entry: "entry.1092902415" },
-    { id: "dollar1", entry: "entry.2079235495" },
-    { id: "quarter", entry: "entry.306064341" },
-    { id: "dime", entry: "entry.192192234" },
-    { id: "nickel", entry: "entry.1789237795" },
-    { id: "penny", entry: "entry.1270358826" },
+    { id: "dollar100", entry: "entry.620449416" }, //1
+    { id: "dollar50", entry: "entry.1257815732" }, //2
+    { id: "dollar20", entry: "entry.1364637093" }, //3
+    { id: "dollar10", entry: "entry.430719215" }, //4
+    { id: "dollar5", entry: "entry.301685711" }, //5
+    { id: "dollar2", entry: "entry.1092902415" }, //6
+    { id: "dollar1", entry: "entry.2079235495" }, //7 
+    { id: "quarter", entry: "entry.306064341" }, //8
+    { id: "dime", entry: "entry.192192234" }, //9
+    { id: "nickel", entry: "entry.1789237795" }, //10 
+    { id: "penny", entry: "entry.1270358826" }, //11
   ];
 
   denominations.forEach(({ id, entry }) => {
@@ -32,12 +32,12 @@ async function submitForm(event) {
   });
 
   const otherFields = [
-    { id: "totalCash", entry: "entry.1226012656" },
-    { id: "cashTips", entry: "entry.642661969" },
-    { id: "creditCardTips", entry: "entry.1970204850" },
-    { id: "totalTips", entry: "entry.1109905648" },
-    { id: "totalHours", entry: "entry.1394990260" },
-    { id: "tipsPerHours", entry: "entry.4514394" },
+    { id: "totalCash", entry: "entry.1226012656" }, //12
+    { id: "cashTips", entry: "entry.642661969" }, //13
+    { id: "creditCardTips", entry: "entry.1970204850" }, //14
+    { id: "totalTips", entry: "entry.1109905648" }, //15
+    { id: "totalHours", entry: "entry.1394990260" }, //16
+    { id: "tipsPerHours", entry: "entry.4514394" }, //17
   ];
 
   otherFields.forEach(({ id, entry }) => {
@@ -50,9 +50,9 @@ async function submitForm(event) {
       hour: "employee1Hour",
       tip: "employee1Tip",
       entries: {
-        name: "entry.327614031",
-        hour: "entry.149025361",
-        tip: "entry.457081833",
+        name: "entry.327614031", //18
+        hour: "entry.149025361", //19
+        tip: "entry.457081833", //20
       },
     },
     {
@@ -60,9 +60,9 @@ async function submitForm(event) {
       hour: "employee2Hour",
       tip: "employee2Tip",
       entries: {
-        name: "entry.985937245",
-        hour: "entry.139079485",
-        tip: "entry.2029080166",
+        name: "entry.985937245", //21
+        hour: "entry.139079485", //22
+        tip: "entry.2029080166", //23
       },
     },
     {
@@ -70,9 +70,9 @@ async function submitForm(event) {
       hour: "employee3Hour",
       tip: "employee3Tip",
       entries: {
-        name: "entry.32268275",
-        hour: "entry.588489638",
-        tip: "entry.1419105835",
+        name: "entry.32268275", //24
+        hour: "entry.588489638", //25
+        tip: "entry.1419105835", //26
       },
     },
     {
@@ -80,9 +80,9 @@ async function submitForm(event) {
       hour: "employee4Hour",
       tip: "employee4Tip",
       entries: {
-        name: "entry.677445114",
-        hour: "entry.1718511892",
-        tip: "entry.2062698025",
+        name: "entry.677445114", //27
+        hour: "entry.1718511892", //28
+        tip: "entry.2062698025", //29
       },
     },
     {
@@ -90,9 +90,9 @@ async function submitForm(event) {
       hour: "employee5Hour",
       tip: "employee5Tip",
       entries: {
-        name: "entry.186781676",
-        hour: "entry.2135084544",
-        tip: "entry.1866013795",
+        name: "entry.186781676", //30
+        hour: "entry.2135084544", //31
+        tip: "entry.1866013795", //32
       },
     },
     {
@@ -100,9 +100,9 @@ async function submitForm(event) {
       hour: "employee6Hour",
       tip: "employee6Tip",
       entries: {
-        name: "entry.90846170",
-        hour: "entry.1904667002",
-        tip: "entry.1859071159",
+        name: "entry.90846170", //33
+        hour: "entry.1904667002", //34
+        tip: "entry.1859071159", //35
       },
     },
     {
@@ -110,9 +110,9 @@ async function submitForm(event) {
       hour: "employee7Hour",
       tip: "employee7Tip",
       entries: {
-        name: "entry.939478897",
-        hour: "entry.1651459784",
-        tip: "entry.1384862999",
+        name: "entry.939478897", //36
+        hour: "entry.1651459784", //37
+        tip: "entry.1384862999", //38
       },
     },
     {
@@ -120,9 +120,9 @@ async function submitForm(event) {
       hour: "employee8Hour",
       tip: "employee8Tip",
       entries: {
-        name: "entry.1967954126",
-        hour: "entry.611891140",
-        tip: "entry.173505653",
+        name: "entry.1967954126", //39
+        hour: "entry.611891140", //40
+        tip: "entry.173505653", //41
       },
     },
     {
@@ -130,9 +130,9 @@ async function submitForm(event) {
       hour: "employee9Hour",
       tip: "employee9Tip",
       entries: {
-        name: "entry.326229070",
-        hour: "entry.1664580093",
-        tip: "entry.406033651",
+        name: "entry.326229070", //42
+        hour: "entry.1664580093", //43
+        tip: "entry.406033651", //44
       },
     },
     {
@@ -140,9 +140,9 @@ async function submitForm(event) {
       hour: "employee10Hour",
       tip: "employee10Tip",
       entries: {
-        name: "entry.642011690",
-        hour: "entry.93211156",
-        tip: "entry.1836842277",
+        name: "entry.642011690", //45
+        hour: "entry.93211156", //46
+        tip: "entry.1836842277", 
       },
     },
   ];
@@ -154,7 +154,7 @@ async function submitForm(event) {
   });
 
   const formURL =
-    "https://docs.google.com/forms/d/e/1FAIpQLSeyHEKMM3bey-CI6SZ9NFvggHdL-mE6m82Nrrtm_OYe_l8qfg/formResponse";
+    "https://docs.google.com/forms/d/e/1FAIpQLSdO8nn0cdQuDbwIrRoiS_XtpLa5jY7E0GiwE_m2tlKVmGC72g/formResponse";
     try {
       // Submit to Google Form
       await fetch(formURL, {

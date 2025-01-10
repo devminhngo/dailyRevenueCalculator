@@ -16,12 +16,11 @@
     <script defer src="script.js"></script>
   </head>
   <body>
-    
     <div id="toastContainer" class="toast-container"></div>
 
     <div class="container">
       <h1>DAILY REVENUE</h1>
-      <h3>Location: Park Meadows</h3>
+      <h3>Location: Coal Mine</h3>
       <h3 id="currentDate">Date</h3>
       <form id="dynamicForm" autocomplete="off" onsubmit="submitForm(event)">
         <div class="tables-container">
@@ -52,7 +51,16 @@
               <td>$50</td>
               <td>
                 <label for="dollar50"></label>
-                <input type="number" id="dollar50" oninput="calculateTotal()" />
+                <input
+                  type="number"
+                  id="dollar50"
+                  onkeydown="
+                if (event.key === '.') {
+                  event.preventDefault();
+                }
+              "
+                  oninput="calculateTotal()"
+                />
               </td>
               <td><input type="text" id="dollar50Total" readonly /></td>
             </tr>
@@ -60,7 +68,16 @@
               <td>$20</td>
               <td>
                 <label for="dollar20"></label>
-                <input type="number" id="dollar20" oninput="calculateTotal()" />
+                <input
+                  type="number"
+                  id="dollar20"
+                  onkeydown="
+                if (event.key === '.') {
+                  event.preventDefault();
+                }
+              "
+                  oninput="calculateTotal()"
+                />
               </td>
               <td><input type="text" id="dollar20Total" readonly /></td>
             </tr>
@@ -68,7 +85,16 @@
               <td>$10</td>
               <td>
                 <label for="dollar10"></label>
-                <input type="number" id="dollar10" oninput="calculateTotal()" />
+                <input
+                  type="number"
+                  id="dollar10"
+                  onkeydown="
+                if (event.key === '.') {
+                  event.preventDefault();
+                }
+              "
+                  oninput="calculateTotal()"
+                />
               </td>
               <td><input type="text" id="dollar10Total" readonly /></td>
             </tr>
@@ -76,7 +102,16 @@
               <td>$5</td>
               <td>
                 <label for="dollar5"></label>
-                <input type="number" id="dollar5" oninput="calculateTotal()" />
+                <input
+                  type="number"
+                  id="dollar5"
+                  onkeydown="
+                if (event.key === '.') {
+                  event.preventDefault();
+                }
+              "
+                  oninput="calculateTotal()"
+                />
               </td>
               <td><input type="text" id="dollar5Total" readonly /></td>
             </tr>
@@ -84,7 +119,16 @@
               <td>$1</td>
               <td>
                 <label for="dollar1"></label>
-                <input type="number" id="dollar1" oninput="calculateTotal()" />
+                <input
+                  type="number"
+                  id="dollar1"
+                  onkeydown="
+                if (event.key === '.') {
+                  event.preventDefault();
+                }
+              "
+                  oninput="calculateTotal()"
+                />
               </td>
               <td><input type="text" id="dollar1Total" readonly /></td>
             </tr>
@@ -101,7 +145,16 @@
               <td>$0.25</td>
               <td>
                 <label for="Quarter"></label>
-                <input type="number" id="quarter" oninput="calculateTotal()" />
+                <input
+                  type="number"
+                  id="quarter"
+                  onkeydown="
+                if (event.key === '.') {
+                  event.preventDefault();
+                }
+              "
+                  oninput="calculateTotal()"
+                />
               </td>
               <td><input type="text" id="quarterTotal" readonly /></td>
             </tr>
@@ -109,7 +162,16 @@
               <td>$0.10</td>
               <td>
                 <label for="dime"></label>
-                <input type="number" id="dime" oninput="calculateTotal()" />
+                <input
+                  type="number"
+                  id="dime"
+                  onkeydown="
+                if (event.key === '.') {
+                  event.preventDefault();
+                }
+              "
+                  oninput="calculateTotal()"
+                />
               </td>
               <td><input type="text" id="dimeTotal" readonly /></td>
             </tr>
@@ -117,7 +179,16 @@
               <td>0.05</td>
               <td>
                 <label for="nickel"></label>
-                <input type="number" id="nickel" oninput="calculateTotal()" />
+                <input
+                  type="number"
+                  id="nickel"
+                  onkeydown="
+                if (event.key === '.') {
+                  event.preventDefault();
+                }
+              "
+                  oninput="calculateTotal()"
+                />
               </td>
               <td><input type="text" id="nickelTotal" readonly /></td>
             </tr>
@@ -125,7 +196,16 @@
               <td>0.01</td>
               <td>
                 <label for="penny"></label>
-                <input type="number" id="penny" oninput="calculateTotal()" />
+                <input
+                  type="number"
+                  id="penny"
+                  onkeydown="
+                if (event.key === '.') {
+                  event.preventDefault();
+                }
+              "
+                  oninput="calculateTotal()"
+                />
               </td>
               <td><input type="text" id="pennyTotal" readonly /></td>
             </tr>
@@ -138,7 +218,16 @@
               <td>$2</td>
               <td>
                 <label for="dollar2"></label>
-                <input type="number" id="dollar2" oninput="calculateTotal()" />
+                <input
+                  type="number"
+                  id="dollar2"
+                  onkeydown="
+                if (event.key === '.') {
+                  event.preventDefault();
+                }
+              "
+                  oninput="calculateTotal()"
+                />
               </td>
               <td><input type="text" id="dollar2Total" readonly /></td>
             </tr>
@@ -191,7 +280,14 @@
             </thead>
             <tbody>
               <tr>
-                <td><input type="text" id="employee1" placeholder="Name" required /></td>
+                <td>
+                  <input
+                    type="text"
+                    id="employee1"
+                    placeholder="Name"
+                    required
+                  />
+                </td>
                 <td>
                   <input
                     type="number"
@@ -415,7 +511,7 @@
           </table>
         </div>
         <button type="button" onclick="addEmployeeRow()">+ Add Employee</button>
-        
+
         <button type="submit" class="submit-btn">Submit</button>
       </form>
     </div>
